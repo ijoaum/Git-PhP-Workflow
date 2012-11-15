@@ -5,12 +5,14 @@ require 'Models/GitBranch.php';
  * @property GitBranch $branchList
  * @property GitBranch $activeBranch
  */
-class GitBranchList {
+class GitBranchList extends Git {
 	
 	private $branchList = array();
 	private $activeBranch;
 	
-	public function __construct($git_branch_string) {
+	public function __construct() {
+		
+		$git_branch_string = $this->gitBranchCommand();
 			
 		$list = explode("\n", $git_branch_string);
 		
@@ -29,6 +31,10 @@ class GitBranchList {
 	
 	public function addBranch(GitBranch $branch) {
 		$this->branchList[] = $branch;
+	}
+	
+	private function gitBranchCommand(){
+		return $this->execute("branch");
 	}
 	
 }

@@ -3,7 +3,7 @@
 /**
  * Representação de uma branch
  */
-class GitBranch {
+class GitBranch extends Git{
 	
 	public $name;
 	private $active = false;
@@ -22,4 +22,5 @@ class GitBranch {
 	public function isActive(){
 		return $this->active;
 	}
+	
 }

@@ -1,11 +1,7 @@
 <?php
-
+require 'Models/Git.php';
 require 'Models/GitBranchList.php';
 
-$cmd = "git branch";
-$output = shell_exec($cmd);
-
-$branchList = new GitBranchList($output);
-
+$branchList = new GitBranchList();
 var_dump($branchList);
 
