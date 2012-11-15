@@ -20,6 +20,6 @@ class GitCommit extends Git {
 	}
 	
 	public static function doCommit($message){
-		print self::execute('commit -am "' . mysql_real_escape_string($message) . '"');
+		return self::execute('commit -am "' . mysql_real_escape_string($message) . '"');
 	} 
 }
