@@ -18,4 +18,8 @@ class GitCommit extends Git {
 		$this->date 	= $commit->date;
 		$this->mesage	= $commit->mesage;
 	}
+	
+	public static function doCommit($message){
+		print self::execute('commit -am "' . mysql_real_escape_string($message) . '"');
+	} 
 }

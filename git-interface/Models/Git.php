@@ -5,7 +5,7 @@
  */
 class Git {
 	
-	public function execute($command) {
+	public static function execute($command) {
 		$command = "git ".$command;
 		$output = shell_exec($command);
 		
