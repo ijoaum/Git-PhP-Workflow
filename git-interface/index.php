@@ -1,11 +1,11 @@
 <?php
 
-echo "<pre>";
+require 'Models/GitBranchList.php';
 
-$cmd = "git add ../.";
+$cmd = "git branch";
 $output = shell_exec($cmd);
 
-$cmd = "git commit -am a";
-$output = shell_exec($cmd);
+$branchList = new GitBranchList($output);
 
-print $output;
+var_dump($branchList);
+
