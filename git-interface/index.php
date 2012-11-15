@@ -10,6 +10,6 @@ require 'Models/GitBranchList.php';
 
 $branchList = new GitBranchList();
 
-GitCommit::doCommit("commit do php '");exit;
+// GitCommit::doCommit("commit do php '");exit;
 
 print $branchList->activeBranch()->name;
