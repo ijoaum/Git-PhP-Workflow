@@ -35,4 +35,20 @@ class GitBranch extends Git{
 		return $this->active;
 	}
 	
+	/**
+	 * Static functions
+	 */
+	
+	public static function newBranch($branchName){
+		return Git::execute("branch ".$branchName);
+	}
+	
+	public static function checkoutBranch($branchName){
+		return Git::execute("checkout ".$branchName);
+	}
+	
+	public static function merge($branchName){
+		return Git::execute("merge ".$branchName);
+	}
+	
 }
