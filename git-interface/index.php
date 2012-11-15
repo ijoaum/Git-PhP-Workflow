@@ -10,4 +10,4 @@ require 'Models/GitBranchList.php';
 
 $branchList = new GitBranchList();
 
-print $branchList->activeBranch()->log()->headCommit()->date;
+print $branchList->activeBranch()->name;
