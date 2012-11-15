@@ -1,5 +1,4 @@
 <?php
-require 'Models/GitBranch.php';
 /**
  * Lista de branches
  * @property GitBranch $branchList
@@ -33,8 +32,16 @@ class GitBranchList extends Git {
 		$this->branchList[] = $branch;
 	}
 	
+	/**
+	 * @return GitBranch
+	 */
+	public function activeBranch(){
+		return $this->activeBranch;
+	}
+	
 	private function gitBranchCommand(){
 		return $this->execute("branch");
 	}
+
 	
 }

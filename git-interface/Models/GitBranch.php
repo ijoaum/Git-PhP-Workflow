@@ -2,10 +2,13 @@
 
 /**
  * Representação de uma branch
+ * @property GitLog $log
  */
 class GitBranch extends Git{
 	
 	public $name;
+	private $log;
+	
 	private $active = false;
 	
 	public function __construct($name) {
@@ -17,6 +20,15 @@ class GitBranch extends Git{
 		
 		$name = trim($name);
 		$this->name = $name;
+		
+		$this->log = new GitLog($this);
+		
+	}
+	/**
+	 * @return GitLog
+	 */
+	public function log(){
+		return $this->log;
 	}
 	
 	public function isActive(){
