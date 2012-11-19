@@ -35,6 +35,13 @@ class GitBranchList extends Git {
 	/**
 	 * @return GitBranch
 	 */
+	public function branchList(){
+		return $this->branchList;
+	}
+	
+	/**
+	 * @return GitBranch
+	 */
 	public function activeBranch(){
 		return $this->activeBranch;
 	}

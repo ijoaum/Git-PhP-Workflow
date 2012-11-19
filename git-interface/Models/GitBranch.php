@@ -51,4 +51,12 @@ class GitBranch extends Git{
 		return Git::execute("merge ".$branchName);
 	}
 	
+	/**
+	 * @return GitBranch
+	 */
+	public static function cast($gitBranch){
+		return $gitBranch;
+	}
+	
+	
 }

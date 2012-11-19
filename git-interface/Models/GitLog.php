@@ -8,10 +8,12 @@ class GitLog extends Git {
 	
 	function __construct(GitBranch $branch) {
 		$logJson = json_decode($this->gitLogCommand($branch));
-		foreach ($logJson as $key => $value) {
-			$commit = new GitCommit($value);
-			
-			$this->addCommit($commit);
+		if($logJson) {
+			foreach ($logJson as $key => $value) {
+				$commit = new GitCommit($value);
+				
+				$this->addCommit($commit);
+			}	
 		}
 	}
 	

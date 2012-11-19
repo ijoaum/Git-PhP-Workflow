@@ -1,0 +1,41 @@
+body {
+	background: #111111;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	color: #fff;
+	font-family: Verdana;
+	font-size: 11px;
+}
+
+#git-box {
+	position: relative;
+}
+
+#branches-box {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	
+	border: dotted 1px #ccc;
+	padding: 5px;
+}
+
+#branch-actions {
+	position:absolute;
+	left:5px;
+	top:5px;
+	
+	width:500px;
+	background: #222;
+	
+	padding:5px;
+	
+}
+
+#branch-actions h1.active-branch {
+	padding:2px;
+	margin:0;
+}
