@@ -13,10 +13,14 @@ class Git {
 			$path = "";
 		}
 		
+		$current_dir = getcwd();
+		chdir(REPOSITORY_PATH);
 		
 		$command = "git " . $path . " " . $command;
 		//print $command;exit;
 		$output = shell_exec($command);
+		
+		chdir($current_dir);
 		return $output;
 	}
 }
