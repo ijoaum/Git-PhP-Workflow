@@ -39,3 +39,53 @@ body {
 	padding:2px;
 	margin:0;
 }
+
+.status-list {
+	list-style: none;
+	padding:0;
+	margin:3px;
+}
+
+.status-list li {
+	color:#999;
+}
+
+.status-list li.New {
+	color:#005500;
+}
+
+.status-list li.Conflict {
+	color:#ab0000;
+}
+
+.commit-input {
+	padding:5px;
+	background: #fff;
+	border-top: solid 1px #666;
+	border-left: solid 1px #666;
+	border-bottom: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+	color:#000;
+	font-size: 14px;
+	
+	position: absolute;
+	width: 400px;
+}
+
+.commit-button {
+	position: absolute;
+	right: 0px;
+	top: 2px;
+	width: 95px;
+	height: 29px;
+	
+	color:#000000;
+	font-size:14px;
+	background: #999999;
+	border: solid 0px #aaa;
+}
+
+#commit-form {
+	position: relative;
+	height: 30px;
+}
