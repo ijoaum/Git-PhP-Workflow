@@ -6,15 +6,14 @@
 class Git {
 	
 	public static function execute($command) {
-
+		$current_dir = getcwd();
 		if(defined("REPOSITORY_PATH")) {
-			$path = "--git-dir=" . REPOSITORY_PATH . "/.git --work-tree=".REPOSITORY_PATH;	
+			$path = "--git-dir=" . REPOSITORY_PATH . "/.git --work-tree=".REPOSITORY_PATH;
+			chdir(REPOSITORY_PATH);	
 		} else {
 			$path = "";
 		}
 		
-		$current_dir = getcwd();
-		chdir(REPOSITORY_PATH);
 		
 		$command = "git " . $path . " " . $command;
 		//print $command;exit;
