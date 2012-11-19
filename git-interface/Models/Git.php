@@ -13,8 +13,9 @@ class Git {
 			$path = "";
 		}
 		
-		/**/
+		
 		$command = "git " . $path . " " . $command;
+		//print $command;return;
 		$output = shell_exec($command);
 		return $output;
 	}
