@@ -2,8 +2,8 @@
 
 if($_POST) {
 	if($_POST['action'] == "commit") {
-		print Git::execute("add .");
-		print GitCommit::doCommit($_POST['message']);
+		Git::execute("add .");
+		$commitReturn = GitCommit::doCommit($_POST['message']);
 	}
 }
 
