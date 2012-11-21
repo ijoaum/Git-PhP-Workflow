@@ -29,13 +29,25 @@ body {
 	top:5px;
 	
 	width:500px;
-	background: #222;
+	background: #323232;
 	
 	padding:5px;
 	
 }
 
-#branch-actions h1.active-branch {
+#shell-return {
+	position:absolute;
+	left:520px;
+	top:5px;
+	
+	width:350px;
+	background: #323232;
+	
+	padding:5px;
+	
+}
+
+h1 {
 	padding:2px;
 	margin:0;
 }
@@ -80,7 +92,7 @@ body {
 	height: 29px;
 	
 	color:#000000;
-	font-size:14px;
+	font-size:10px;
 	background: #999999;
 	border: solid 0px #aaa;
 }
@@ -88,4 +100,25 @@ body {
 #commit-form {
 	position: relative;
 	height: 30px;
+}
+
+
+.sync-button {
+	position: absolute;
+	right: 5px;
+	top: 2px;
+	width: 95px;
+	height: 23px;
+	
+	color:#000000;
+	font-size:14px;
+	background: #999999;
+	border: solid 0px #aaa;
+}
+
+#shell-textarea {
+	width: 350px;
+	height: 150px;
+	color:#00ff00;
+	background: #000;
 }

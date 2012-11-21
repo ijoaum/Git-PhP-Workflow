@@ -19,7 +19,13 @@ class GitCommit extends Git {
 		$this->message	= $commit->message;
 	}
 	
+	/**
+	 * @return GitReturn
+	 */
 	public static function doCommit($message){
-		return self::execute('commit -am "' . ($message) . '"');
+		$gitReturn = new GitReturn();
+		$gitReturn->shellReturn = self::execute('commit -am "' . ($message) . '"');
+		
+		return $gitReturn;
 	} 
 }
