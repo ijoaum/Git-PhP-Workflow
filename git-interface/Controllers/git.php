@@ -18,4 +18,5 @@ if($_POST) {
 $branchList = new GitBranchList();
 $gitStatus  = new GitStatus();
 
+
 ?>

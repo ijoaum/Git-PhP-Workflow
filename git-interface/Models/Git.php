@@ -17,8 +17,7 @@ class Git {
 		
 		$command = "git " . $path . " " . $command;
 		//print $command;exit;
-		$output = shell_exec($command);
-		
+		$output = shell_exec($command . " 2>&1");
 		chdir($current_dir);
 		return $output;
 	}

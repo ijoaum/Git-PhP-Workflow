@@ -6,7 +6,7 @@
  */
 class GitReturn extends Git{
 	
-	public $sucess;
+	public $success;
 	public $message;
 	public $shellReturn;
 	

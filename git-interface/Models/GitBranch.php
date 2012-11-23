@@ -44,17 +44,17 @@ class GitBranch extends Git{
 		$gitStatus  = new GitStatus();
 		
 		if($gitStatus->hasChanges) {
-			$gitReturn->sucess = false;
+			$gitReturn->success = false;
 			$gitReturn->message = "Please commit your changes before push.";
 		} else {
 			$push = Git::execute("push origin ".$this->name);
 			$gitReturn->shellReturn = $push;
-			
+
 			if(stripos($push, "error") !== false) {
-				$gitReturn->sucess = false;
+				$gitReturn->success = false;
 				$gitReturn->message = "Git error.";			
 			} else {
-				$gitReturn->sucess = true;
+				$gitReturn->success = true;
 				$gitReturn->message = "Pushed.";
 			}
 		
@@ -72,17 +72,17 @@ class GitBranch extends Git{
 		$gitStatus  = new GitStatus();
 		
 		if($gitStatus->hasChanges) {
-			$gitReturn->sucess = false;
+			$gitReturn->success = false;
 			$gitReturn->message = "Please commit your changes before pull.";
 		} else {
 			$push = Git::execute("pull origin ".$this->name);
 			$gitReturn->shellReturn = $push;
 			
 			if(stripos($push, "error") !== false) {
-				$gitReturn->sucess = false;
+				$gitReturn->success = false;
 				$gitReturn->message = "Git error.";			
 			} else {
-				$gitReturn->sucess = true;
+				$gitReturn->success = true;
 				$gitReturn->message = "Pulled.";
 			}
 		
@@ -100,20 +100,20 @@ class GitBranch extends Git{
 		$gitStatus  = new GitStatus();
 		
 		if($gitStatus->hasChanges) {
-			$gitReturn->sucess = false;
+			$gitReturn->success = false;
 			$gitReturn->message = "Please commit your changes before sync.";
 		} else {
 			
 			$pull = $this->pull();
-			if(!$pull->sucess) {
+			if(!$pull->success) {
 				return $pull;
 			} else {
 				$push = $this->push();
-				if(!$push->sucess) {
+				if(!$push->success) {
 					return $push;
 				} else {
 					//Sucesso
-					$gitReturn->sucess = true;
+					$gitReturn->success = true;
 					$gitReturn->message = "Branch in sync.";
 					$gitReturn->shellReturn = $pull->shellReturn . "\n\n" . $push->shellReturn;		
 				}

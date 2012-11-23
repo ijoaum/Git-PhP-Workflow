@@ -1,5 +1,5 @@
 <div id="git-box">
-	<div id="branch-actions">
+	<div id="branch-actions" class="box">
 		<h1 class="active-branch">ACTIVE BRANCH :: <?php echo $branchList->activeBranch()->name ?></h1>
 		
 		<?php if($gitStatus->hasChanges) {
@@ -32,7 +32,21 @@
 		
 			
 	</div>
-	<div id="shell-return">
+	<div id="git-flow" class="box">
+		<h1>Git Flow</h1>
+		<hr />
+		<div id="git-flow-buttons">
+			<?php if(stripos($branchList->activeBranch()->name,"feature") !== false) {
+				
+			?>
+				<br /> <button class="flow-button finish">Finish Feature</button> <br /><br />
+			<?php
+			}
+			?>
+			<button class="flow-button">Start new Feature</button> <button class="flow-button">Start new Hotfix</button>
+		</div>
+	</div>
+	<div id="shell-return" class="box">
 		<h1>Shell</h1>
 		<hr />
 		<textarea id="shell-textarea"><?php echo $shellReturn ?></textarea>
